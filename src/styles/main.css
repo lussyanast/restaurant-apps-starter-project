@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body, html {
+html, body, html {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -16,6 +16,8 @@ body {
   font-size: 12px;
   background-color: white;
   color: #424242;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
@@ -32,7 +34,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 
 .header_logo {
   width: 50px;
@@ -185,34 +186,45 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width: 1024px) {
-  .header_inner {
-    padding: 10px;
+@media only screen and (max-width: 767px) {
+  .header_menu {
+    display: block; /* Show the menu button */
   }
 
-  .header_logo {
-    width: 40px;
-    margin-right: 10px;
+  .nav {
+    display: none; /* Hide the navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: #F1B4BB;
+    padding-top: 56px; /* Adjust according to the header height */
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
   }
 
-  .header_title {
-    font-size: 24px;
+  .nav_list {
+    flex-direction: column;
+    padding: 20px;
   }
 
   .nav_item {
-    padding: 8px;
-    font-size: 12px;
+    margin-bottom: 10px;
   }
 
-  .hero_title {
-    font-size: 48px;
+  .nav_item a {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
   }
 
-  .hero_tagline {
-    font-size: 16px;
+  .nav_item:hover {
+    background-color: #FDF0F0;
+    border-radius: 0;
   }
 
-  .button {
-    font-size: 16px
+  .nav[aria-hidden="false"] {
+    transform: translateX(0);
   }
 }

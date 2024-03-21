@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carat Cuisine</title>
   <link rel="icon" href="./images/logo.png" sizes="512x512" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
 </head>
-
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="/" class="skip-link">Skip to main content</a>
   
   <header class="header">
     <div class="header_inner">
@@ -24,11 +22,12 @@
     <button id="menu" class="header_menu" aria-label="Toggle Menu">☰</button>
     <nav id="drawer" class="nav" aria-hidden="true">
       <ul class="nav_list">
-        <li class="nav_item"><a href="#">Home</a></li>
+        <li class="nav_item"><a href="/">Home</a></li>
         <li class="nav_item"><a href="#">Favorite</a></li>
         <li class="nav_item"><a href="https://www.linkedin.com/in/lussyanast/">About Us</a></li>
       </ul>
     </nav>
+    <div id="overlay"></div> 
   </header>
 
   <div class="hero">
@@ -52,7 +51,6 @@
     <p class="copyright">Copyright &copy; 2024 - Restaurant Apps</p>
   </footer>
 
-  <script src="../scripts/index.js" async defer></script>
+  <script src="../scripts/index.js"></script>
 </body>
-
 </html>
