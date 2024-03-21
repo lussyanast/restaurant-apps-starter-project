@@ -1,3 +1,168 @@
+* {
+  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 12px;
+  background-color: white;
+  color: #424242;
+}
+
+.header {
+  min-height: 56px;
+  padding: 16px 64px;
+  display: grid;
+  background: #F1B4BB;
+  color: white;
+  grid-template-columns: 1fr 1fr;
+}
+
+.header_inner {
+  display: flex;
+  align-items: center; 
+}
+
+.header_logo {
+  width: 50px; 
+  height: auto; 
+  margin-right: 20px; 
+}
+
+
+.nav_list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.nav_item {
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.nav_item:hover {
+  background-color: #FDF0F0;
+  border-radius: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+}
+
 img {
   display: block;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url(../public/images/heros/hero-image_2.jpg);
+  background-position: center;
+}
+
+.hero_inner {
+  color: white;
+  filter: none;
+}
+
+.hero_title {
+  font-size: 64px;
+}
+
+.hero_tagline {
+  font-size: 16px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #F1B4BB;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  padding: 15px 32px;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #FDF0F0;
+}
+
+
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 32px;
+}
+
+.exlore {
+  width: 100%;
+  margin: 60px auto;
+}
+
+.explore_label {
+  font-size: 32px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.explore_label::after {
+  content: '';
+  margin-top: 16px;
+  display: block;
+}
+
+.posts {
+  display: grid;
+  margin: 32px auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+}
+
+.post-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+.post-item_content {
+  padding: 16px;
+}
+
+.post-item_thumbnail {
+  width: 100%;
+}
+
+.footer {
+  padding: 16px 64px;
+  background: #F1B4BB;
+  color: white;
+  text-align: center;
 }
