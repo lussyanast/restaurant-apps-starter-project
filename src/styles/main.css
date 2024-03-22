@@ -24,25 +24,26 @@ body {
 .header {
   min-height: 56px;
   padding: 16px 64px;
-  display: grid;
-  align-items: left;
-  position: relative;
+  display: flex; /* Mengubah display menjadi flex */
+  align-items: center; /* Mengatur tata letak vertikal ke tengah */
   justify-content: space-between;
   background: #f1b4bb;
   color: white;
-  grid-template-columns: 1fr 1fr;
 }
 
-.header_inner {
-  display: flex;
-  
-  justify-content: space-between;
+.header_logo {
+  display: flex; /* Mengatur display menjadi flex */
+  align-items: center; /* Mengatur tata letak vertikal ke tengah */
 }
 
 .header_logo img {
   width: 50px;
   height: auto;
-  margin-right: 20px;
+  margin-right: 10px; /* Mengurangi margin kanan */
+}
+
+.header_title {
+  font-size: 2rem; /* Mengatur ukuran font */
 }
 
 .nav {
@@ -59,8 +60,8 @@ body {
 .nav_item {
   text-decoration: none;
   display: inline-block;
-  padding: 10px;
-  font-size: 14px;
+  padding: 5px;
+  font-size: 20px;
   color: #333;
 }
 
@@ -188,26 +189,46 @@ body {
   text-align: center;
 }
 
-@media only screen and (max-width: 1024px) {
-  .header_inner {
-    padding: 10px;
+.menu-items {
+  /* Atur z-index pada menu-items agar tampil di atas header */
+  z-index: 10;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* Semua aturan CSS terkait hamburger menu dipindahkan ke dalam media query ini */
+  .navbar-container input[type="checkbox"],
+  .navbar-container .hamburger-lines {
+    display: none; /* Sembunyikan hamburger menu pada mode desktop */
   }
 
-  .header_logo {
-    width: 40px;
-    margin-right: 10px;
+  .menu-items {
+    transform: none; /* Kembalikan transform ke nilai default pada mode desktop */
+    background: none; /* Hapus warna latar belakang pada mode desktop */
+    position: static; /* Kembalikan posisi ke nilai default pada mode desktop */
+    max-width: none; /* Kembalikan lebar maksimum ke nilai default pada mode desktop */
+    height: auto; /* Kembalikan tinggi ke nilai default pada mode desktop */
+    padding: 0; /* Hapus padding pada mode desktop */
+    box-shadow: none; /* Hapus box shadow pada mode desktop */
+    margin-left: 0; /* Hapus margin kiri pada mode desktop */
   }
 
-  .header_title {
-    font-size: 24px;
+  .menu-items li {
+    margin-bottom: 0.5rem; /* Sesuaikan margin bottom pada mode desktop */
   }
 
-  .nav_item {
-    padding: 8px;
-    font-size: 12px;
+  .nav_list {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  /* Sembunyikan nav_list pada mode mobile */
+  .nav_list {
+    display: none;
   }
 
-  .hero_title {
-    font-size: 48px;
+  .navbar-container .hamburger-lines {
+    height: 44px;
+    width: 44px;
   }
 }
