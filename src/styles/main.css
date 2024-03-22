@@ -24,26 +24,26 @@ body {
 .header {
   min-height: 56px;
   padding: 16px 64px;
-  display: flex; /* Mengubah display menjadi flex */
-  align-items: center; /* Mengatur tata letak vertikal ke tengah */
+  display: flex;
+  align-items: center; 
   justify-content: space-between;
   background: #f1b4bb;
   color: white;
 }
 
 .header_logo {
-  display: flex; /* Mengatur display menjadi flex */
-  align-items: center; /* Mengatur tata letak vertikal ke tengah */
+  display: flex; 
+  align-items: center; 
 }
 
 .header_logo img {
   width: 50px;
   height: auto;
-  margin-right: 10px; /* Mengurangi margin kanan */
+  margin-right: 10px; 
 }
 
 .header_title {
-  font-size: 2rem; /* Mengatur ukuran font */
+  font-size: 2rem; 
 }
 
 .nav {
@@ -190,30 +190,28 @@ body {
 }
 
 .menu-items {
-  /* Atur z-index pada menu-items agar tampil di atas header */
   z-index: 10;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* Semua aturan CSS terkait hamburger menu dipindahkan ke dalam media query ini */
   .navbar-container input[type="checkbox"],
   .navbar-container .hamburger-lines {
-    display: none; /* Sembunyikan hamburger menu pada mode desktop */
+    display: none; 
   }
 
   .menu-items {
-    transform: none; /* Kembalikan transform ke nilai default pada mode desktop */
-    background: none; /* Hapus warna latar belakang pada mode desktop */
-    position: static; /* Kembalikan posisi ke nilai default pada mode desktop */
-    max-width: none; /* Kembalikan lebar maksimum ke nilai default pada mode desktop */
-    height: auto; /* Kembalikan tinggi ke nilai default pada mode desktop */
-    padding: 0; /* Hapus padding pada mode desktop */
-    box-shadow: none; /* Hapus box shadow pada mode desktop */
-    margin-left: 0; /* Hapus margin kiri pada mode desktop */
+    transform: none; 
+    background: none; 
+    position: static; 
+    max-width: none; 
+    height: auto; 
+    padding: 0; 
+    box-shadow: none; 
+    margin-left: 0; 
   }
 
   .menu-items li {
-    margin-bottom: 0.5rem; /* Sesuaikan margin bottom pada mode desktop */
+    margin-bottom: 0.5rem; 
   }
 
   .nav_list {
@@ -222,7 +220,6 @@ body {
 }
 
 @media only screen and (max-width: 1023px) {
-  /* Sembunyikan nav_list pada mode mobile */
   .nav_list {
     display: none;
   }
