@@ -1,11 +1,12 @@
 * {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -24,19 +25,21 @@ body {
   min-height: 56px;
   padding: 16px 64px;
   display: grid;
-  align-items: center;
-  justify-content: space-between; 
-  background: #F1B4BB;
+  align-items: left;
+  position: relative;
+  justify-content: space-between;
+  background: #f1b4bb;
   color: white;
   grid-template-columns: 1fr 1fr;
 }
 
 .header_inner {
   display: flex;
-  align-items: center;
+  
+  justify-content: space-between;
 }
 
-.header_logo {
+.header_logo img {
   width: 50px;
   height: auto;
   margin-right: 20px;
@@ -44,13 +47,13 @@ body {
 
 .nav {
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .nav_list {
   display: flex;
   gap: 0.5rem;
-  margin-left: auto; 
+  margin-left: auto;
 }
 
 .nav_item {
@@ -62,7 +65,7 @@ body {
 }
 
 .nav_item:hover {
-  background-color: #FDF0F0;
+  background-color: #fdf0f0;
   border-radius: 1rem;
 }
 
@@ -97,7 +100,7 @@ body {
 
 .button {
   display: inline-block;
-  background-color: #F1B4BB;
+  background-color: #f1b4bb;
   border: none;
   color: white;
   text-align: center;
@@ -111,7 +114,7 @@ body {
 }
 
 .button:hover {
-  background-color: #FDF0F0;
+  background-color: #fdf0f0;
 }
 
 .content {
@@ -130,7 +133,7 @@ body {
 }
 
 .explore_label::after {
-  content: '';
+  content: "";
   margin-top: 16px;
   display: block;
 }
@@ -180,31 +183,31 @@ body {
 
 .footer {
   padding: 16px 64px;
-  background: #F1B4BB;
+  background: #f1b4bb;
   color: white;
   text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
   .header_inner {
-    padding: 10px; 
+    padding: 10px;
   }
 
   .header_logo {
-    width: 40px; 
-    margin-right: 10px; 
+    width: 40px;
+    margin-right: 10px;
   }
 
   .header_title {
-    font-size: 24px; 
+    font-size: 24px;
   }
 
   .nav_item {
     padding: 8px;
-    font-size: 12px; 
+    font-size: 12px;
   }
 
   .hero_title {
-    font-size: 48px
+    font-size: 48px;
   }
 }

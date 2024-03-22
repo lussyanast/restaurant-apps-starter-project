@@ -1,56 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carat Cuisine</title>
-  <link rel="icon" href="./images/logo.png" sizes="512x512" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles/main.css">
-</head>
-<body>
-  <a href="/" class="skip-link">Skip to main content</a>
-  
-  <header class="header">
-    <div class="header_inner">
-      <img src="./images/logo.png" alt="Carat Cuisine Logo" class="header_logo" />
-      <h1 class="header_title">Carat Cuisine</h1>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carat Cuisine</title>
+    <link rel="icon" href="./images/logo.png" sizes="512x512" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <style>
+      .navbar {
+        position: absolute;
+        top: 0;
+        right: 100;
+      }
 
-    <nav id="drawer" class="nav" aria-hidden="true">
-      <ul class="nav_list">
-        <li class="nav_item"><a href="/">Home</a></li>
-        <li class="nav_item"><a href="#">Favorite</a></li>
-        <li class="nav_item"><a href="https://www.linkedin.com/in/lussyanast/">About Us</a></li>
-      </ul>
-    </nav>
-    <div id="overlay"></div> 
-  </header>
+      .navbar-container input[type="checkbox"],
+      .navbar-container .hamburger-lines {
+        display: block;
+      }
 
-  <div class="hero">
-    <div class="hero_inner">
-      <h1 class="hero_title">Welcome to Carat Cuisine</h1>
-      <p class="hero_tagline">Find your favorite restaurant in one click</p>
-      <button class="button" onclick="window.location.href='#main-content'">See Restaurants</button>
-    </div>
-  </div>
+      .navbar-container {
+        display: block;
+        position: relative;
+        height: 64px;
+      }
 
-  <main id="main-content">
-    <section class="content">
-      <div class="explore">
-        <h1 class="explore_label">Explore Restaurant</h1>
-        <div class="posts"></div>
+      .navbar-container input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        z-index: 5;
+        opacity: 0;
+      }
+
+      .navbar-container .hamburger-lines {
+        display: block;
+        height: 23px;
+        width: 35px;
+        position: absolute;
+        top: 17px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .navbar-container .hamburger-lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+      }
+
+      .navbar-container .hamburger-lines .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      .navbar-container .hamburger-lines .line2 {
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .navbar-container .hamburger-lines .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+      }
+
+      .navbar .menu-items {
+        padding-top: 100px;
+        background: pink;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 50px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+      }
+
+      .navbar .menu-items li {
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      .logo {
+        position: absolute;
+        top: 5px;
+        right: 15px;
+        font-size: 2rem;
+      }
+
+      .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+        transform: translateX(0);
+      }
+
+      .navbar-container
+        input[type="checkbox"]:checked
+        ~ .hamburger-lines
+        .line1 {
+        transform: rotate(35deg);
+      }
+
+      .navbar-container
+        input[type="checkbox"]:checked
+        ~ .hamburger-lines
+        .line2 {
+        transform: scaleY(0);
+      }
+
+      .navbar-container
+        input[type="checkbox"]:checked
+        ~ .hamburger-lines
+        .line3 {
+        transform: rotate(-35deg);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li class="nav_item"><a href="#favorite">Home</a></li>
+            <li class="nav_item"><a href="#main-content">Explore</a></li>
+            <li class="nav_item">
+              <a href="https://www.linkedin.com/in/lussyanast/">About Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header_inner">
+        <div class="header_logo">
+          <img src="./images/logo.png" alt="Carat Cuisine Logo" />
+        </div>
+        <h1 class="header_title">Carat Cuisine</h1>
+      </div>      
+      <nav id="drawer" class="nav" aria-hidden="true">
+        <ul class="nav_list" id="myLinks">
+          <li class="nav_item"><a href="#favorite">Home</a></li>
+          <li class="nav_item"><a href="#main-content">Explore</a></li>
+          <li class="nav_item">
+            <a href="https://www.linkedin.com/in/lussyanast/">About Us</a>
+          </li>
+        </ul>
+      </nav>
+      <div id="overlay"></div>
+    </header>
+
+    <div class="hero" id="favorite">
+      <div class="hero_inner">
+        <h1 class="hero_title">Welcome to Carat Cuisine</h1>
+        <p class="hero_tagline">Find your favorite restaurant in one click</p>
+        <button class="button" onclick="window.location.href='#main-content'">
+          See Restaurants
+        </button>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer class="footer">
-    <p class="copyright">Copyright &copy; 2024 - Restaurant Apps</p>
-  </footer>
+    <main id="main-content">
+      <section class="content">
+        <div class="explore">
+          <h1 class="explore_label">Explore Restaurant</h1>
+          <div class="posts"></div>
+        </div>
+      </section>
+    </main>
 
-  <script src="../scripts/index.js"></script>
-</body>
+    <footer class="footer">
+      <p class="copyright">Copyright &copy; 2024 - Restaurant Apps</p>
+    </footer>
+
+    <script src="../scripts/index.js"></script>
+  </body>
 </html>
