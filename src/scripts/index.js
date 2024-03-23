@@ -50,4 +50,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.error("Error fetching data:", error);
   }
+
+  document.querySelector('.hamburger-button').addEventListener('click', function() {
+    document.querySelector('.nav-links').style.display = 
+    (document.querySelector('.nav-links').style.display == 'none') ? 'block' : 'none';
+ });
 });

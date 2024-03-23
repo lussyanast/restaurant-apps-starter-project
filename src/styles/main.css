@@ -194,38 +194,57 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  .navbar-container input[type="checkbox"],
-  .navbar-container .hamburger-lines {
-    display: none; 
+
+  .hamburger-button {
+    display: none;
   }
 
-  .menu-items {
-    transform: none; 
-    background: none; 
-    position: static; 
-    max-width: none; 
-    height: auto; 
-    padding: 0; 
-    box-shadow: none; 
-    margin-left: 0; 
-  }
-
-  .menu-items li {
-    margin-bottom: 0.5rem; 
-  }
-
-  .nav_list {
-    display: flex;
+  .nav-links {
+    display: none;
   }
 }
 
 @media only screen and (max-width: 1023px) {
-  .nav_list {
+  .nav-links {
     display: none;
+    overflow: hidden;
+    background-color: #f1b4bb;
+    position: relative;
+  }
+  
+  .nav-links a {
+    float: left;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nav-links a.icon {
+    float: right;
+  }
+  
+  .nav-links a:hover {
+    background-color: #f1b4bb;
+  }
+  
+  .active {
+    background-color: #f1b4bb;
+    color: white;
   }
 
-  .navbar-container .hamburger-lines {
-    height: 44px;
-    width: 44px;
+  .hamburger-button {
+    display: block;
+    background-color: #f1b4bb;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  #drawer {
+    display: none;
   }
 }
+
+
